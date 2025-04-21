@@ -8,7 +8,6 @@ import Sky from "./models/Sky";
 import Bird from "./models/Bird";
 import Plane from "./models/Plane";
 import HomeInfo from "./components/HomeInfo";
-import { useRouter } from "next/router";
 import Loading from "./components/Loading";
 
 const Page = () => {
@@ -47,23 +46,6 @@ const Page = () => {
 
   const [islandScale, islandPostion, islandRotation] = setIslandSize();
   const [planeScale, planePostion] = setPlaneSize();
-
-  // useEffect(() => {
-  //   if (!router.isReady) return;
-
-  //   const handleStart = () => setIsLoading(true);
-  //   const handleComplete = () => setIsLoading(false);
-
-  //   router.events.on("routeChangeStart", handleStart);
-  //   router.events.on("routeChangeComplete", handleComplete);
-  //   router.events.on("routeChangeError", handleComplete);
-
-  //   return () => {
-  //     router.events.off("routeChangeStart", handleStart);
-  //     router.events.off("routeChangeComplete", handleComplete);
-  //     router.events.off("routeChangeError", handleComplete);
-  //   };
-  // }, [router.isReady]);
 
   return (
     <section className="w-full h-screen relative">

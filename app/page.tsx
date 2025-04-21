@@ -1,17 +1,21 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Island } from "./models/Island";
 import Loader from "./components/Loader";
 import Sky from "./models/Sky";
 import Bird from "./models/Bird";
 import Plane from "./models/Plane";
 import HomeInfo from "./components/HomeInfo";
+import { useRouter } from "next/router";
+import Loading from "./components/Loading";
 
 const Page = () => {
   const [isRotating, setIsRotating] = useState(false);
   const [currentStage, setCurrentStage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+  // const router = useRouter();
 
   const setIslandSize = () => {
     let screenScale = null;
@@ -44,11 +48,29 @@ const Page = () => {
   const [islandScale, islandPostion, islandRotation] = setIslandSize();
   const [planeScale, planePostion] = setPlaneSize();
 
+  // useEffect(() => {
+  //   if (!router.isReady) return;
+
+  //   const handleStart = () => setIsLoading(true);
+  //   const handleComplete = () => setIsLoading(false);
+
+  //   router.events.on("routeChangeStart", handleStart);
+  //   router.events.on("routeChangeComplete", handleComplete);
+  //   router.events.on("routeChangeError", handleComplete);
+
+  //   return () => {
+  //     router.events.off("routeChangeStart", handleStart);
+  //     router.events.off("routeChangeComplete", handleComplete);
+  //     router.events.off("routeChangeError", handleComplete);
+  //   };
+  // }, [router.isReady]);
+
   return (
     <section className="w-full h-screen relative">
       <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
+      {/* {isLoading && <Loading />} */}
       <Canvas
         shadows
         className="w-full h-screen bg-transparent"

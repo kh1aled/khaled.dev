@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Head from "next/head";
 import Fotter from "./components/Fotter";
+import Loading from "./components/Loading";
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -28,9 +29,12 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body className={`${workSans.variable} ${poppins.variable} antialiased`}>
+        {/* <Loading/> */}
         <Navbar />
         {children}
         <Fotter/>

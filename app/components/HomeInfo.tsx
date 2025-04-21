@@ -10,7 +10,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number }) => {
         Hi, I'm
         <span className="font-semibold mx-2 text-white">Khaled hamdy</span>
         👋
-        <br />A Software Engineer from Egypt (Frontend Developer)
+        <br />A Software Engineer from Egypt (Full Stack Developer)
       </h1>
     );
 
@@ -18,7 +18,7 @@ const HomeInfo = ({ currentStage }: { currentStage: number }) => {
     return (
       <div className="info-box">
         <p className="font-medium sm:text-xl text-center">
-          Passionate Front-End Developer <br /> and Computer Science student.
+          Passionate Full Stack Developer <br /> and Computer Science student.
         </p>
 
         <Link href="/about" className="neo-brutalism-white neo-btn">

@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import img from "@/public/favicon.png";
+import TransitionLink from "./utils/TransitionLink";
 
 const NAV_LINKS = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/projects", label: "Projects" },
@@ -24,14 +26,14 @@ const Navbar = () => {
       {/* Navigation */}
       <nav className="flex text-lg gap-7 font-medium">
         {NAV_LINKS.map(({ href, label }) => (
-          <Link
+          <TransitionLink
             key={href}
             href={href}
-            className={`navbar-link ${route === href ? "text-blue-600" : ""}`}
+            className={`navbar-link ${route === href ? "text-black" : ""}`}
             aria-current={route === href ? "page" : undefined}
           >
             {label}
-          </Link>
+          </TransitionLink>
         ))}
       </nav>
     </header>

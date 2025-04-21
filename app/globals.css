@@ -55,6 +55,18 @@ body {
   font-family: "Work Sans", sans-serif;
   background-color: var(--color-blue-800);
   color: white;
+  transition-property: opacity , background-color , filter , transform;
+  transition-timing-function: ease-in-out;
+}
+
+.page-transition{
+  opacity: 0;
+  transform-origin: bottom center;
+  transform: translateY(120px);
+  filter: blur(10px);
+  transition: all 0.5s ease-in-out;
+  background-color: black;
+  transition-duration: 500ms;
 }
 *{
   padding: 0;
@@ -73,7 +85,7 @@ body:has(.card[data-color="green"]:hover) {
 @layer utilities {
 
   .navbar-link{
-    @apply font-workSans font-bold hover:text-blue-500 transition-colors text-white
+    @apply font-workSans font-bold transition-colors text-white
   }
   .flex-between{
     @apply flex justify-between items-center;
@@ -110,7 +122,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 /* navbar */
   .header {
-    @apply flex-between  sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0 text-black;
+    @apply flex-between  sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0 text-white;
   }
 
   .footer {
@@ -255,3 +267,37 @@ body:has(.card[data-color="green"]:hover) {
   -webkit-backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,);
   backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,)
 }
+
+.loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  background-image:
+    linear-gradient(#FFF 16px, transparent 0) ,
+    linear-gradient(var(--color-blue-dark) 16px, transparent 0) ,
+    linear-gradient(var(--color-blue-dark) 16px, transparent 0) ,
+    linear-gradient(#FFF 16px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: left top , left bottom , right top , right bottom;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(0deg)
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    transform: rotate(180deg)
+  }
+  100% {
+    width: 64px;
+    height: 64px;
+    transform: rotate(360deg)
+  }
+}
+
+

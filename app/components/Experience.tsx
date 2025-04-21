@@ -35,45 +35,6 @@ const Experience = () => {
       ],
       iconBg: "blue",
     },
-    {
-      id: 1,
-      company: "New Generation Publishing and Distribution House",
-      jobRole: "Frontend Developer",
-      history: " May 2024- June 2024",
-      country: "Cairo, Egypt",
-      icon: HtmlImg,
-      roles: [
-        " Developed interactive UI components for the company’s educational platform, improving user engagement.",
-        " Refactored and optimized existing codebase, enhancing performance and reducing load times by 20",
-      ],
-      iconBg: "blue",
-    },
-    {
-      id: 1,
-      company: "New Generation Publishing and Distribution House",
-      jobRole: "Frontend Developer",
-      history: " May 2024- June 2024",
-      country: "Cairo, Egypt",
-      icon: HtmlImg,
-      roles: [
-        " Developed interactive UI components for the company’s educational platform, improving user engagement.",
-        " Refactored and optimized existing codebase, enhancing performance and reducing load times by 20",
-      ],
-      iconBg: "blue",
-    },
-    {
-      id: 1,
-      company: "New Generation Publishing and Distribution House",
-      jobRole: "Frontend Developer",
-      history: " May 2024- June 2024",
-      country: "Cairo, Egypt",
-      icon: HtmlImg,
-      roles: [
-        " Developed interactive UI components for the company’s educational platform, improving user engagement.",
-        " Refactored and optimized existing codebase, enhancing performance and reducing load times by 20",
-      ],
-      iconBg: "blue",
-    },
   ]);
 
   return (
@@ -118,11 +79,11 @@ const Experience = () => {
                 </h3>
 
                 <p
-                    className='text-black-500 font-medium text-base'
-                    style={{ margin: 0 }}
-                  >
-                    {exper?.company}, {exper?.country}
-                  </p>
+                  className="text-black-500 font-medium text-base"
+                  style={{ margin: 0 }}
+                >
+                  {exper?.company}, {exper?.country}
+                </p>
                 <ul className="my-5 list-disc ml-5 space-y-2">
                   {exper?.roles?.map((role, index) => (
                     <li

@@ -1,10 +1,7 @@
 "use client";
 
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 import newGen from "../assets/experiences/NewGen.jpeg";
 import Image from "next/image";
 import { useState } from "react";
@@ -51,13 +48,14 @@ const Experience = () => {
         </p>
       </div>
 
-      <div className="mt-12 flex">
+      <div className="mt-12 flex w-full">
         <VerticalTimeline>
           {experience.map((exper) => (
             <VerticalTimelineElement
               key={exper?.id}
               className="vertical-timeline-element--work"
               date={exper?.history}
+             
               iconStyle={{
                 background: "#fff",
                 color: "black",

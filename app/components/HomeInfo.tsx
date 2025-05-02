@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image"; // Use next/image for optimized images
 import React from "react";
-import arrow from "@/app/assets/icons/arrow.svg"; // Ensure the path is correct and points to the actual file
+import arrow from "../assets/icons/arrow.svg"; // Ensure the path is correct and points to the actual file
 
 const HomeInfo = ({ currentStage }: { currentStage: number }) => {
   if (currentStage === 1)

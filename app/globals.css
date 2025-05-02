@@ -301,3 +301,8 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 
+.vertical-timeline--animate .vertical-timeline-element-content.is-hidden {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}

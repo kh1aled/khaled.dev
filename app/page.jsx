@@ -1,66 +1,54 @@
 'use client'
-import React from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Suspense, useState } from 'react'
 import { Island } from './models/Island'
 import Loader from './components/Loader'
 import Sky from './models/Sky'
 import Bird from './models/Bird'
 import Plane from './models/Plane'
 import HomeInfo from './components/HomeInfo'
-import Loading from './components/Loading'
 
 const Page = () => {
   const [isRotating, setIsRotating] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
-  const [isLoading, setIsLoading] = useState(true)
-  // const router = useRouter();
 
-  const setIslandSize = () => {
-    let screenScale = null
-    let screenPostion = [0, -6.5, -43]
-    let rotation = [0.1, 4.7, 0]
+  const [islandScale, setIslandScale] = useState([1, 1, 1])
+  const [islandPostion, setIslandPostion] = useState([0, -6.5, -43])
+  const [islandRotation, setIslandRotation] = useState([0.1, 4.7, 0])
 
-    if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9]
-    } else {
-      screenScale = [1, 1, 1]
+  const [planeScale, setPlaneScale] = useState([3, 3, 3])
+  const [planePostion, setPlanePostion] = useState([0, -4, -4])
+
+  useEffect(() => {
+    // تشغيل فقط في المتصفح
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth < 768) {
+        setIslandScale([0.9, 0.9, 0.9])
+        setPlaneScale([1.5, 1.5, 1.5])
+        setPlanePostion([0, -1.5, 0])
+      } else {
+        setIslandScale([1, 1, 1])
+        setPlaneScale([3, 3, 3])
+        setPlanePostion([0, -4, -4])
+      }
     }
-
-    return [screenScale, screenPostion, rotation]
-  }
-
-  const setPlaneSize = () => {
-    let screenScale, screenPosition
-
-    if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5]
-      screenPosition = [0, -1.5, 0]
-    } else {
-      screenScale = [3, 3, 3]
-      screenPosition = [0, -4, -4]
-    }
-
-    return [screenScale, screenPosition]
-  }
-
-  const [islandScale, islandPostion, islandRotation] = setIslandSize()
-  const [planeScale, planePostion] = setPlaneSize()
+  }, [])
 
   return (
     <section className='w-full h-screen relative'>
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
-      {/* {isLoading && <Loading />} */}
+
       <Canvas shadows className='w-full h-screen bg-transparent' camera={{ near: 0.5, far: 10000 }}>
         <Suspense fallback={<Loader />}>
-          {/* إضاءة */}
+          {/* الإضاءة */}
           <directionalLight args={[[4, 1, 1]]} intensity={2} />
           <ambientLight intensity={0.5} />
           <pointLight position={[10, 5, 10]} intensity={2} />
           <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={2} />
           <hemisphereLight groundColor='#0000000' intensity={1} />
+
           <Island
             position={islandPostion}
             rotation={islandRotation}

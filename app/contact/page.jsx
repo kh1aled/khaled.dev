@@ -19,7 +19,7 @@ const page = () => {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
   const { alert, showAlert, hideAlert } = useAlert();
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const form = formData.current;
 

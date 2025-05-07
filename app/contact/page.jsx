@@ -1,4 +1,5 @@
 "use client";
+
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef, useState } from "react";
 import Dog from "@/app/models/Dog";
@@ -7,15 +8,12 @@ import useAlert from "@/hooks/useAlert";
 import Alert from "../components/Alert";
 import emailjs from "@emailjs/browser";
 
-const NEXT_PUBLIC_EMAILJS_SERVICE_ID =
-  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const NEXT_PUBLIC_EMAILJS_TEMPLATE_ID =
-  process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const NEXT_PUBLIC_EMAILJS_PUBLIC_KEY =
-  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+const NEXT_PUBLIC_EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 const page = () => {
-  const formData = useRef<HTMLFormElement>(null);
+  const formData = useRef(null);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
   const { alert, showAlert, hideAlert } = useAlert();
 
@@ -28,7 +26,7 @@ const page = () => {
       !NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
       !NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
     ) {
-      console.error("❌ Missing EmailJS environment variables      .");
+      console.error("❌ Missing EmailJS environment variables.");
       showAlert({
         type: "danger",
         text: "EmailJS configuration is missing. Please check your environment variables.",
@@ -47,15 +45,11 @@ const page = () => {
         .then(
           () => {
             showAlert({ type: "success", text: "Email sent successfully!" });
-            setTimeout(() => {
-              hideAlert();
-            }, 2000);
+            setTimeout(hideAlert, 2000);
           },
           (error) => {
             showAlert({ type: "danger", text: error.text });
-            setTimeout(() => {
-              hideAlert();
-            }, 2000);
+            setTimeout(hideAlert, 2000);
           }
         );
     }
@@ -65,7 +59,7 @@ const page = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   return (
-    <section className="relative flex lg:flex-row flex-col max-container">
+    <section className="relative flex flex-col lg:flex-row max-container">
       <div className="flex-1 min-w-[50%] flex flex-col">
         {alert.show && <Alert {...alert} />}
 
@@ -87,18 +81,20 @@ const page = () => {
               onBlur={handleBlur}
             />
           </label>
+
           <label className="text-white font-semibold">
             Email
             <input
               type="email"
               name="email"
               className="input"
-              placeholder="John@gmail.com"
+              placeholder="john@gmail.com"
               required
               onFocus={handleFocus}
               onBlur={handleBlur}
             />
           </label>
+
           <label className="text-white font-semibold">
             Your Message
             <textarea
@@ -110,11 +106,13 @@ const page = () => {
               onBlur={handleBlur}
             />
           </label>
+
           <button className="btn" type="submit">
             Submit
           </button>
         </form>
       </div>
+
       <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
         <Canvas
           camera={{

@@ -17,7 +17,11 @@ export default {
         },
         blue: {
           500: "#2b77e7"
-        }
+        },
+        background: {
+          DEFAULT: "#13111c",
+          500: "#13111c"
+        },
       },
       fontFamily: {
         workSans: ["var(--font-work-sans)", "sans-serif"],

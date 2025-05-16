@@ -1,0 +1,425 @@
+.myNav {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  border: none;
+  z-index: 9999910000000000;
+  height: 5rem;
+  line-height: 5rem;
+  background-color: transparent;
+  transition: 0.4s;
+  color: #fff;
+}
+
+.myNav.light.active {
+  background-color: #fff !important;
+}
+.myNav.light .navbar-toggler {
+  color: #03a9f4;
+}
+
+.myNav.light .collapse.show .navbar-nav .nav-item .nav-link {
+  color: #fff;
+}
+/* .myNav.light .collapse .navbar-nav .nav-item .nav-link {
+  color: black;
+} */
+/* .myNav.active {
+  background-color: #080c14;
+} */
+@media (max-width: 992px) {
+  .myNav {
+    flex-direction: row-reverse !important;
+  }
+}
+.myNav .navbar-toggler {
+  border: none !important;
+  color: #fff;
+  float: right;
+}
+.myNav .navbar-toggler:focus {
+  box-shadow: none;
+}
+.myNav .navbar-toggler #nav-icon {
+  --nav-icon-color: currentColor;
+  background: rgba(0, 0, 0, 0);
+  border: 0;
+  cursor: pointer;
+  height: 20px;
+  position: relative;
+}
+.myNav .navbar-toggler #nav-icon,
+.myNav .navbar-toggler #nav-icon span {
+  transition: all var(--transition-smooth) cubic-bezier(0.61, 0.01, 0.42, 1);
+  width: 30px;
+}
+.myNav .navbar-toggler #nav-icon span {
+  background: var(--nav-icon-color);
+  border: 2px solid var(--nav-icon-color);
+  border-radius: 0.125rem;
+  display: block;
+  height: 0;
+  position: absolute;
+}
+.myNav .navbar-toggler #nav-icon.open {
+  transform: scale(1.1);
+  transition-delay: 0.1s;
+  color: #03a9f4;
+}
+.myNav .navbar-toggler #nav-icon.open span:nth-child(3):before {
+  background: #f26451;
+  border-radius: 50%;
+  height: 2px;
+  width: 2px;
+}
+.myNav .navbar-toggler #nav-icon.open span {
+  --var-zero-x: 80%;
+  --var-zero-y: 0%;
+  --var-ten: 10%;
+  animation: atom 0.3s linear 1;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid var(--nav-icon-color);
+  border-radius: 50%;
+  height: 9px;
+  margin-right: 2px;
+  margin-top: -2px;
+  top: 0;
+  width: 25px;
+}
+.myNav .navbar-toggler #nav-icon span:first-child {
+  top: 0;
+}
+.myNav .navbar-toggler #nav-icon span:nth-child(2) {
+  top: 8px;
+}
+.myNav .navbar-toggler #nav-icon span:nth-child(3) {
+  top: 16px;
+}
+.myNav .navbar-toggler #nav-icon.open span:first-child {
+  top: 7px;
+}
+.myNav .navbar-toggler #nav-icon.open span:nth-child(2) {
+  top: 8px;
+}
+.myNav .navbar-toggler #nav-icon.open span:nth-child(3) {
+  top: 7px;
+}
+.myNav .navbar-toggler #nav-icon span:nth-child(3):before {
+  position: absolute;
+  animation: ball 2s linear infinite;
+  border: 2px solid var(--nav-icon-color);
+  content: "";
+  display: block;
+  opacity: 0;
+  position: relative;
+  top: 0.25px;
+}
+.myNav .navbar-toggler #nav-icon.open span:first-child {
+  transform: rotate(-33deg);
+}
+.myNav .navbar-toggler #nav-icon.open span:nth-child(2) {
+  transform: rotate(90deg);
+}
+.myNav .navbar-toggler #nav-icon.open span:nth-child(3) {
+  transform: rotate(33deg);
+}
+.myNav .navbar-toggler #nav-icon.open span:nth-child(3):before {
+  opacity: 1;
+  transition: opacity 0.6s cubic-bezier(0.61, 0.01, 0.42, 1);
+}
+.myNav::before, .myNav::after {
+  display: table;
+  content: " ";
+}
+.myNav .progress-bar,
+.myNav .progress-bar-active {
+  position: absolute;
+  bottom: 0;
+  height: 5%;
+  opacity: 0;
+  transition: 0.5s opacity transform;
+  transform: translateY(-10px);
+}
+.myNav .progress-bar.active,
+.myNav .progress-bar-active.active {
+  opacity: 100%;
+  transform: translateY(0px);
+}
+.myNav .progress-bar {
+  background-color: rgb(22, 78, 99);
+  width: 100%;
+}
+.myNav .progress-bar-active {
+  background-color: rgb(34, 211, 238);
+}
+.myNav .navbar-icon {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+.myNav .navbar-icon img {
+  width: 50%;
+  height: 100%;
+  margin-top: 4%;
+}
+.myNav .navbar-icon .change_theme_container {
+  display: block;
+  overflow: hidden;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  transition: 0.3s;
+}
+.myNav .navbar-icon .change_theme_container.light {
+  background-color: rgb(8, 145, 178);
+}
+.myNav .navbar-icon .change_theme_container.dark {
+  background-color: rgb(51, 65, 85);
+  color: rgb(148, 163, 184);
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button {
+  width: 50%;
+  height: 100%;
+  line-height: 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  background-color: transparent;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button.bright {
+  left: 0;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button.bright svg {
+  color: #fff;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button.bright.active svg {
+  transform: scale(1.2);
+  color: rgb(8, 145, 178);
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button.dark {
+  right: 0;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button.dark svg {
+  color: rgb(165, 243, 252);
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button button.dark.active svg {
+  transform: scale(1.1);
+  color: #334155;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button .active_el {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 4;
+  transition: 35s;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button .active_el.left {
+  animation: moveToLeft 0.5s linear forwards;
+}
+.myNav .navbar-icon .change_theme_container .change_theme_button .active_el.right {
+  animation: moveToRight 0.5s linear forwards;
+}
+.myNav .collapse {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 100%;
+  background: transparent;
+}
+.myNav .collapse.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+  left: 50%;
+  animation: visible 0.5s ease-in-out;
+  top: 5rem;
+  transform: translateX(-50%);
+  height: 50%;
+}
+.myNav .collapse.show .navbar-nav {
+  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  background-color: #080c14;
+  padding: 0;
+}
+.myNav .collapse.show .navbar-nav .nav-item {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  margin: 7.1px 0rem;
+  border-radius: 10px;
+  line-height: 2rem !important;
+  padding: 0px 14px;
+  transition: 0.2s;
+}
+.myNav .collapse.show .navbar-nav .nav-item:hover {
+  background: rgb(7, 89, 133);
+}
+.myNav .collapse.show .navbar-nav .nav-item .nav-link {
+  width: 100%;
+}
+.myNav .collapse.show .navbar-nav .nav-item.lang {
+  margin: 10px auto;
+}
+.myNav .collapse div {
+  height: 100%;
+}
+.myNav .collapse .navbar-nav {
+  width: 100%;
+  height: 100%;
+  justify-content: end;
+  padding: 0 2rem;
+}
+.myNav .collapse .navbar-nav .nav-item {
+  position: relative;
+  padding: 0 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.myNav .collapse .navbar-nav .nav-item.lang {
+  border-radius: 7px;
+  margin: 10px 0;
+  width: 10rem;
+  height: 2.5rem;
+  background: rgb(14, 165, 233);
+  border: 0;
+  transition: 0.4s;
+}
+.myNav .collapse .navbar-nav .nav-item.lang:hover {
+  background: transparent;
+  border: 1px solid rgb(14, 165, 233);
+}
+.myNav .collapse .navbar-nav .nav-item.lang:hover .nav-link {
+  color: rgb(14, 165, 233) !important;
+}
+.myNav .collapse .navbar-nav .nav-item .nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: 3.2vmin;
+  font-weight: 500;
+}
+.myNav .collapse .navbar-nav .nav-item a i {
+  font-size: 20px;
+  color: #fff;
+}
+.myNav .collapse .navbar-nav .nav-item img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #fff;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@keyframes moveToLeft {
+  from {
+    transform: translate(0%, -50%);
+  }
+  to {
+    transform: translate(-135%, -50%);
+  }
+}
+@keyframes moveToRight {
+  from {
+    transform: translate(-135%, -50%);
+  }
+  to {
+    transform: translate(0%, -50%);
+  }
+}
+@keyframes atom {
+  0% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes division {
+  0% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes ball {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  10% {
+    left: 50%;
+    top: 0;
+  }
+  20% {
+    left: 100%;
+    top: 50%;
+  }
+  30% {
+    left: 50%;
+    top: 100%;
+  }
+  40% {
+    left: 0%;
+    top: 50%;
+  }
+  50% {
+    left: 0;
+    top: 0;
+  }
+  60% {
+    left: 50%;
+    top: 0;
+  }
+  70% {
+    left: 100%;
+    top: 50%;
+  }
+  85% {
+    left: 50%;
+    top: 100%;
+  }
+  100% {
+    left: 0%;
+    top: 50%;
+  }
+}
+@keyframes visible {
+  0% {
+    left: 152%;
+  }
+  100% {
+    left: 50%;
+  }
+}/*# sourceMappingURL=Navbar.css.map */
+
+
+

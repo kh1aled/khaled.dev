@@ -7,7 +7,7 @@
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
 
-  --color-black: #222;
+    --color-black: #222;
     --color-deep-black: black;
     --color-grey-100: #d8e3ee;
     --color-grey-200: #f4f4f4;
@@ -121,8 +121,27 @@ body:has(.card[data-color="green"]:hover) {
     @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
   }
 /* navbar */
+.navbar{
+  @apply justify-between items-center;
+}
   .header {
-    @apply flex-between  sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0 text-white;
+    @apply flex-between  sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-20 right-0 left-0 text-white;
+  }
+  .navbar-nav{
+    @apply w-full h-full flex-center flex-col sm:flex-row;
+  }
+  .navbar-collapse{
+    @apply static w-full h-auto  hidden sm:block;
+  }
+  .navbar-collapse-show{
+    @apply visible sm:visible fixed w-full h-[85vh] right-0 bottom-0 z-20 bg-background-500 flex-center flex-col;
+  }
+  .navbar-toggler{
+    @apply sm:hidden;
+  }
+
+  .nav-item{
+    @apply text-white font-semibold text-lg cursor-pointer py-8 w-full text-center;
   }
 
   .footer {

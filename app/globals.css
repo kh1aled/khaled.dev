@@ -31,7 +31,8 @@
     --color-blue-400: oklch(63.41% .1751 254.98);
     --color-blue-300: #21c8f6;
     --color-blue-200: #cce4fd;
-    --color-blue-800: #141924;
+    --color-blue-800: #13111C;
+    --color-blue-900: #181622;
     --color-card-200: #bbc5cc;
     --color-card-300: #3a4867;
     --color-card-500: #29334a;
@@ -68,6 +69,8 @@ body {
   background-color: black;
   transition-duration: 500ms;
 }
+
+
 *{
   padding: 0;
   margin: 0;
@@ -128,20 +131,20 @@ body:has(.card[data-color="green"]:hover) {
     @apply flex-between  sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-20 right-0 left-0 text-white;
   }
   .navbar-nav{
-    @apply w-full h-full flex-center flex-col sm:flex-row;
+    @apply w-full h-full flex-center flex-col sm:flex-row gap-[2rem];
   }
   .navbar-collapse{
     @apply static w-full h-auto  hidden sm:block;
   }
+
   .navbar-collapse-show{
-    @apply visible sm:visible fixed w-full h-[85vh] right-0 bottom-0 z-20 bg-background-500 flex-center flex-col;
+    @apply visible sm:visible fixed w-[250px] h-[100vh] left-0 bottom-0 z-20 bg-[#121212] flex-center flex-col items_show_animation;
   }
   .navbar-toggler{
     @apply sm:hidden;
   }
-
   .nav-item{
-    @apply text-white font-semibold text-lg cursor-pointer py-8 w-full text-center;
+    @apply text-white font-semibold text-lg cursor-pointer py-8 text-center;
   }
 
   .footer {
@@ -169,6 +172,13 @@ body:has(.card[data-color="green"]:hover) {
   }
 }
 
+.items_show_animation{
+  animation : slide-in 0.5s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+  
+}
+
 .glassmorphism {
   background: rgba(8, 116, 239, 0.07);
   backdrop-filter: blur(10px);
@@ -188,6 +198,7 @@ body:has(.card[data-color="green"]:hover) {
   position: relative;
   transition: 250ms;
   perspective: 500px;
+  background-color: var(--color-blue-900);
 }
 
 .block-container .btn-back {
@@ -286,6 +297,20 @@ body:has(.card[data-color="green"]:hover) {
   -webkit-backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,);
   backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,)
 }
+.night_sky{
+  background-image: url(./assets/images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #00000008;
+  background-blend-mode: overlay;
+  filter: blur(0px);
+  -webkit-filter: blur(0px);
+  transition: all 0.5s ease-in-out;
+  transition-property: opacity , background-color , filter , transform;
+  transition-timing-function: ease-in-out;
+}
 
 .loader {
   width: 64px;
@@ -320,6 +345,17 @@ body:has(.card[data-color="green"]:hover) {
 }
 
 
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .vertical-timeline--animate .vertical-timeline-element-content.is-hidden {
   visibility: visible !important;
   opacity: 1 !important;

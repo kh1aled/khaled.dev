@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import dev_kh from '@/public/favicon.png'
+import dev_kh from '@/app/assets/icons/khaled.png'
 import TransitionLink from './utils/TransitionLink'
 import './styles/Navbar.css'
 import { useRef } from 'react'
@@ -38,17 +38,17 @@ const Navbar = () => {
           </div>
         </button>
         {/* Logo */}
-        <Link href='/' className='bg-black-500 w-12 aspect-square rounded-xl flex items-center justify-center'>
-          <Image src={dev_kh} width={30} height={30} alt='khaled.dev' priority />
+        <Link href='/' className='w-24 aspect-square rounded-xl flex items-center justify-center'>
+          <Image src={dev_kh} className='w-16 h-16' alt='khaled.dev khaledhamdy frontend developer backend developer' priority />
         </Link>
-        <div ref={collapse} className='navbar-collapse ' id='navbarSupportedContent'>
+        <div ref={collapse} className='navbar-collapse' id='navbarSupportedContent'>
           <ul className='navbar-nav mt-2 mt-lg-0'>
             {NAV_LINKS.map(({ href, label, id }) => (
-              <li className='nav-item' key={id}>
+              <li className='nav-item duration-150 hover:-translate-y-1 ease-out' key={id}>
                 <TransitionLink
                   key={href}
                   href={href}
-                  className={`nav-link ${route === href ? 'text-black' : ''}`}
+                  className={`nav-link cursor-pointer   ${route === href ? 'blue-gradient_text font-bold drop-shadow' : ''}`}
                   aria-current={route === href ? 'page' : undefined}
                 >
                   {label}
@@ -57,16 +57,6 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        {/* {NAV_LINKS.map(({ href, label }) => (
-          <TransitionLink
-            key={href}
-            href={href}
-            className={`navbar-link ${route === href ? 'text-black' : ''}`}
-            aria-current={route === href ? 'page' : undefined}
-          >
-            {label}
-          </TransitionLink>
-        ))} */}
       </nav>
     </header>
   )

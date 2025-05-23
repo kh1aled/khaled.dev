@@ -7,10 +7,13 @@ import Sky from './models/Sky'
 import Bird from './models/Bird'
 import Plane from './models/Plane'
 import HomeInfo from './components/HomeInfo'
+import { usePathname } from 'next/navigation'
+import SplachScreen from "./components/SplachScreen";
 
 const Page = () => {
   const [isRotating, setIsRotating] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
+  
 
   const [islandScale, setIslandScale] = useState([1, 1, 1])
   const [islandPostion, setIslandPostion] = useState([0, -6.5, -43])
@@ -18,6 +21,11 @@ const Page = () => {
 
   const [planeScale, setPlaneScale] = useState([3, 3, 3])
   const [planePostion, setPlanePostion] = useState([0, -4, -4])
+
+   const pathname = usePathname();
+    const isHome = pathname === "/";
+    const [isLoading , setIsloading] = useState(true);
+
 
   useEffect(() => {
     // تشغيل فقط في المتصفح
@@ -34,20 +42,55 @@ const Page = () => {
     }
   }, [])
 
+  useEffect(()=>{
+
+  } , [isLoading])
+
+  if (isLoading) {
+    return <SplachScreen setIsloading={setIsloading} />
+  }
+  
   return (
-    <section className='w-full h-screen relative'>
+    
+    <section className='w-full h-screen relative night_sky'>
+
+
       <div className='absolute top-28 left-0 right-0 z-10 flex items-center justify-center'>
         {currentStage && <HomeInfo currentStage={currentStage} />}
       </div>
 
       <Canvas shadows className='w-full h-screen bg-transparent' camera={{ near: 0.5, far: 10000 }}>
         <Suspense fallback={<Loader />}>
-          {/* الإضاءة */}
-          <directionalLight args={[[4, 1, 1]]} intensity={2} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 5, 10]} intensity={2} />
-          <spotLight position={[0, 50, 10]} angle={0.15} penumbra={1} intensity={2} />
-          <hemisphereLight groundColor='#0000000' intensity={1} />
+
+          <ambientLight intensity={0.6} color="#223344" />
+
+          <directionalLight
+            position={[4, 1, 1]}
+            intensity={0.4}
+            color="#88aaff"
+          />
+
+          <pointLight
+            position={[10, 5, 10]}
+            intensity={0.5}
+            distance={20}
+            color="#336699"
+          />
+
+          <spotLight
+            position={[0, 20, 10]}
+            angle={0.25}
+            penumbra={0.8}
+            intensity={0.6}
+            color="#88aaff"
+            castShadow
+          />
+
+          <hemisphereLight
+            skyColor="#112233"
+            groundColor="#000000"
+            intensity={0.3}
+          />
 
           <Island
             position={islandPostion}
@@ -57,7 +100,7 @@ const Page = () => {
             setIsRotating={setIsRotating}
             setCurrentStage={setCurrentStage}
           />
-          <Sky isRotating={isRotating} />
+          {/* <Sky isRotating={isRotating} /> */}
           <Bird />
           <Plane isRotating={isRotating} position={planePostion} rotation={[0, 20.1, 0]} scale={planeScale} />
         </Suspense>

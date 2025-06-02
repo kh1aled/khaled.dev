@@ -3,16 +3,16 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useRef, useState } from "react";
 import Dog from "@/app/models/Dog";
-import Loader from "../components/Loader";
+import Loader from "./Loader";
 import useAlert from "@/hooks/useAlert";
-import Alert from "../components/Alert";
+import Alert from "./Alert";
 import emailjs from "@emailjs/browser";
 
 const NEXT_PUBLIC_EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 const NEXT_PUBLIC_EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-const page = () => {
+const Contact = () => {
   const formData = useRef(null);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
   const { alert, showAlert, hideAlert } = useAlert();
@@ -59,7 +59,7 @@ const page = () => {
   const handleBlur = () => setCurrentAnimation("idle");
 
   return (
-    <section className="relative flex flex-col lg:flex-row max-container">
+    <section id="contact" className="relative flex flex-col lg:flex-row max-container">
       <div className="flex-1 min-w-[50%] flex flex-col">
         {alert.show && <Alert {...alert} />}
 
@@ -145,4 +145,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Contact;

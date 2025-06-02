@@ -9,7 +9,7 @@ const SplachScreen = ({ setIsloading }: { setIsloading: (v: boolean) => void }) 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsloading(false)
-    }, 3000)
+    }, 1000)
 
     return () => clearTimeout(timer)
   }, [setIsloading])

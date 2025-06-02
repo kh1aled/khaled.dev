@@ -6,7 +6,8 @@
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;
-
+  --color-background: #08233B;
+  --text-body: #9CA7B1;
     --color-black: #222;
     --color-deep-black: black;
     --color-grey-100: #d8e3ee;
@@ -49,15 +50,18 @@
     --color-tooling: #9a67dc;
     --color-languages: #f8b02b;
     --color-devops: #5f77a1;
+    --secondary-color: #172F44;
+    --light-color: #657685;
 
 }
 
 body {
   font-family: "Work Sans", sans-serif;
-  background-color: var(--color-blue-800);
+  background-color: var(--color-background);
   color: white;
   transition-property: opacity , background-color , filter , transform;
   transition-timing-function: ease-in-out;
+  height: 500vh;
 }
 
 .page-transition{
@@ -97,7 +101,7 @@ body:has(.card[data-color="green"]:hover) {
     @apply flex justify-center items-center;
   }
   .max-container {
-    @apply max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
+    @apply max-w-7xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
@@ -124,27 +128,27 @@ body:has(.card[data-color="green"]:hover) {
     @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
   }
 /* navbar */
-.navbar{
-  @apply justify-between items-center;
+.header {
+  @apply flex-between sm:px-16 px-8 py-1 max-w-7xl mx-auto fixed top-5  z-20 right-0 left-0 text-white ;
 }
-  .header {
-    @apply flex-between  sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-20 right-0 left-0 text-white;
-  }
+   .navbar{
+     @apply justify-between items-center bg-[var(--secondary-color)] rounded-xl;
+   }
   .navbar-nav{
-    @apply w-full h-full flex-center flex-col sm:flex-row gap-[2rem];
+    @apply w-full h-full flex-center flex-col sm:flex-row gap-[2rem] ;
   }
   .navbar-collapse{
-    @apply static w-full h-auto  hidden sm:block;
+    @apply static w-full h-auto  hidden md:flex ;
   }
 
   .navbar-collapse-show{
     @apply visible sm:visible fixed w-[250px] h-[100vh] left-0 bottom-0 z-20 bg-[#121212] flex-center flex-col items_show_animation;
   }
   .navbar-toggler{
-    @apply sm:hidden;
+    @apply md:hidden;
   }
   .nav-item{
-    @apply text-white font-semibold text-lg cursor-pointer py-8 text-center;
+    @apply text-white/30 font-semibold text-lg cursor-pointer py-8 text-center;
   }
 
   .footer {
@@ -170,7 +174,38 @@ body:has(.card[data-color="green"]:hover) {
   .cta-text {
     @apply text-white font-extrabold flex-1 text-3xl max-md:text-center;
   }
+
+  /* HOME */
+
+  .home{
+    @apply px-8 py-1 max-w-7xl lg:h-screen mx-auto flex flex-col sm:flex-row justify-between items-center gap-[5.25rem] sm:gap-3 pt-[10rem]  sm:pt-[15rem] lg:pt-[7rem]
+  }
+  .home__title{
+    @apply w-full text-lg sm:text-xl text-[var(--text-body)] text-center sm:text-start
+  }
+  .home__description{
+    @apply text-4xl sm:text-4xl font-bold leading-[3rem] sm:leading-[3.5rem] md:text-5xl md:leading-[4.5rem]  lg:text-6xl lg:leading-[5.5rem] ;
+  }
+  .home__bg_image{
+    @apply w-[20rem] lg:w-[25rem] aspect-square cursor-pointer
+  }
+  .experience_line{
+    @apply w-3 h-auto bg-[var(--secondary-color)] rounded-full
+  }
+  .experience_circle{
+    @apply w-6 h-6  p-[1px] absolute z-10 -translate-x-[28px] sm:-translate-x-8 left-0 border-4 border-solid border-white rounded-full
+  }
+  .experience_circle_inner{
+    @apply w-full h-full bg-white rounded-full
+
+  }
+
+  /* absolute -translate-x-[29px] sm:-translate-x-8 left-0 */
+
+
+
 }
+
 
 .items_show_animation{
   animation : slide-in 0.5s ease-in-out forwards;
@@ -198,7 +233,7 @@ body:has(.card[data-color="green"]:hover) {
   position: relative;
   transition: 250ms;
   perspective: 500px;
-  background-color: var(--color-blue-900);
+  background-color: var(--secondary-color);
 }
 
 .block-container .btn-back {
@@ -250,7 +285,7 @@ body:has(.card[data-color="green"]:hover) {
   z-index: 1;
   width: inherit;
   height: inherit;
-  background-color: #ffffff33;
+  background-color: var(--secondary-color);
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   transition: 250ms;
@@ -297,20 +332,77 @@ body:has(.card[data-color="green"]:hover) {
   -webkit-backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,);
   backdrop-filter: var(--tw-backdrop-blur,)var(--tw-backdrop-brightness,)var(--tw-backdrop-contrast,)var(--tw-backdrop-grayscale,)var(--tw-backdrop-hue-rotate,)var(--tw-backdrop-invert,)var(--tw-backdrop-opacity,)var(--tw-backdrop-saturate,)var(--tw-backdrop-sepia,)
 }
-.night_sky{
-  background-image: url(./assets/images/background.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-color: #00000008;
-  background-blend-mode: overlay;
-  filter: blur(0px);
-  -webkit-filter: blur(0px);
-  transition: all 0.5s ease-in-out;
-  transition-property: opacity , background-color , filter , transform;
-  transition-timing-function: ease-in-out;
+
+.experience-list-item{
+  position: relative;
 }
+.experience-list-item::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid var(--light-color);
+}
+
+.slider .slider_container .work-item .card .project-title{
+  background-color: #f3f4f6;
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.slider .slider_container .work-item .card:hover{
+  transform: scale(1.05);
+}
+.slider .slider_container .work-item .card .line{
+  width: 96%;
+}
+
+.slider .slider_container .work-item .card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+.slider .slider_container .work-item .card .project-title {
+  position: absolute;
+  left: 0;
+  width: 96%;
+  height: 5rem;
+  border-radius: 12px;
+  background-color: #111827;
+  margin: auto;
+  right: 0;
+  bottom: -4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider .slider_container .work-item .card h1 {
+  color: #fff;
+  font-size: 4vmin;
+}
+.slider .slider_container .work-item .card .line {
+  position: absolute;
+  left: 0;
+  width: 0%;
+  height: 0.2rem;
+  border-radius: 12px;
+  background-color: var(--color-blue);
+  margin: auto;
+  right: 0;
+  bottom: -4rem;
+  transition: 0.5s;
+}
+
+.slider .slider_container .work-item .card .project-title h1 ,i{
+    color: black;
+}
+
+
+
 
 .loader {
   width: 64px;
@@ -326,6 +418,9 @@ body:has(.card[data-color="green"]:hover) {
   background-position: left top , left bottom , right top , right bottom;
   animation: rotate 1s linear infinite;
 }
+
+
+
 @keyframes rotate {
   0% {
     width: 64px;

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
-import Fotter from "./components/Fotter";
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={`${workSans.variable} ${poppins.variable} antialiased`}>
         <Navbar />
         {children}
-        <Fotter/>
+        {/* <Fotter/> */}
       </body>
     </html>
   );

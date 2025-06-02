@@ -1,11 +1,13 @@
 import React from 'react'
-import Skills from '../components/Skills'
-import Experience from '../components/Experience'
-import CTA from '../components/CTA'
+import Skills from './Skills'
+import Experience from './Experience'
+import CTA from './CTA'
+import Education from './Education'
+import Link from 'next/link'
 
-const page = () => {
+const About = () => {
   return (
-    <div className='relative max-container'>
+    <div id='about' className='relative max-container'>
       <h1 className='head-text'>
         Hello I&apos;m <span className='blue-gradient_text font-semibold drop-shadow'>Khaled</span>
       </h1>
@@ -23,9 +25,23 @@ const page = () => {
 
       <Experience />
 
-      <CTA />
+      <Education />
+
+      <section className='cta'>
+        <h3 className='cta-text'>
+          Download my cv? <br />
+        </h3>
+
+        <Link
+          href='https://drive.google.com/uc?export=download&id=17ZSgnOLOfFDhAZqUR6iG9rlgxF8rPUih'
+          className='btn'
+          download='frontend.pdf'
+        >
+          Download My CV
+        </Link>
+      </section>
     </div>
   )
 }
 
-export default page
+export default About

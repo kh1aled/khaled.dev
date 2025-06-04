@@ -3,7 +3,7 @@
 
 import Image from 'next/image'
 import React, { useEffect } from 'react'
-import logo from "@/app/assets/icons/khaled.png"
+import logo from "@/app/assets/icons/khaledLogo.png"
 
 const SplachScreen = ({ setIsloading }: { setIsloading: (v: boolean) => void }) => {
   useEffect(() => {
@@ -15,9 +15,9 @@ const SplachScreen = ({ setIsloading }: { setIsloading: (v: boolean) => void }) 
   }, [setIsloading])
 
   return (
-    <div className='fixed inset-0 z-50 flex flex-col items-center justify-center bg-black text-white'>
+    <div className='fixed inset-0 z-50 flex flex-col items-center justify-center bg-[var(--secondary-color)] text-white'>
       <Image
-        className='w-24 h-24 md:w-36 md:h-36 lg:w-48 lg:h-48 mb-4 animate-bounce'
+        className='w-24 h-24 md:w-36 md:h-36 lg:w-48 lg:h-48 mb-4'
         src={logo}
         alt='khaled hamdy fullstack web developer'
       />

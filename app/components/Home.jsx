@@ -6,12 +6,10 @@ const Home = () => {
     return (
 
         <section id='home' className='home'>
-            <div className='home__container flex justify-center items-start flex-col gap-10'>
+            <div className='home__container flex justify-center items-start flex-col gap-10' data-aos="fade-right" >
                 <h1 className='home__title'>Welcome to My Portfolio 👋</h1>
-                {/* <p className='home__description'><span className='text-[var(--text-body)]'>I'm</span> <span className='blue-gradient_text'>Khaled Hamdy</span> <br/>
-                    a Software Engineer</p> */}
 
-                <p className="home__description">
+                <p className="home__description" >
                     <span className="text-[var(--text-body)]">
                         I'm <TypewriterText text="Khaled Hamdy" />
                     </span>
@@ -24,7 +22,7 @@ const Home = () => {
 
 
             </div>
-            <div className='home__background'>
+            <div className='home__background' data-aos="fade-left">
                 <Image src={profile} alt='dev khaled hamdy' className='home__bg_image' />
             </div>
         </section>

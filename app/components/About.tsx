@@ -8,11 +8,11 @@ import Link from 'next/link'
 const About = () => {
   return (
     <div id='about' className='relative max-container'>
-      <h1 className='head-text'>
+      <h1 className='head-text' data-aos='fade-up' data-aos-duration='1000'>
         Hello I&apos;m <span className='blue-gradient_text font-semibold drop-shadow'>Khaled</span>
       </h1>
       <div>
-        <p className='mt-5 flex flex-col gap-3 text-slate-500'>
+        <p className='mt-5 flex flex-col gap-3 text-slate-500' data-aos='fade-up' data-aos-duration='1000'>
           A passionate Full-Stack Web Developer with over 2 years of experience in designing and developing dynamic,
           responsive, and user-friendly web applications. Skilled in both front-end and back-end technologies, with a
           strong focus on optimizing performance, enhancing UI/UX, and delivering high-quality, scalable solutions.
@@ -27,7 +27,7 @@ const About = () => {
 
       <Education />
 
-      <section className='cta'>
+      <section className='cta' data-aos='fade-up' data-aos-duration='1000'>
         <h3 className='cta-text'>
           Download my cv? <br />
         </h3>

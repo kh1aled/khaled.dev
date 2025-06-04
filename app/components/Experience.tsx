@@ -23,9 +23,11 @@ const Experience = () => {
 
   return (
     <section className='py-10 flex flex-col'>
-      <h3 className='subhead-text'>My Experience</h3>
+      <h3 className='subhead-text' data-aos='fade-up' data-aos-duration='1000'>
+        My Experience
+      </h3>
 
-      <div className='text-slate-500 mt-5 flex flex-col gap-5'>
+      <div className='text-slate-500 mt-5 flex flex-col gap-5' data-aos='fade-up' data-aos-duration='1000'>
         <p>
           I've collaborated with diverse companies and teams, continuously sharpening my skills and gaining hands-on
           experience across various projects. Working alongside talented professionals has allowed me to grow both
@@ -35,10 +37,14 @@ const Experience = () => {
 
       <div className='mt-12 flex w-full gap-4 pl-3'>
         {/**Line */}
-        <div className='w-2 h-80 bg-gradient-to-b from-white to-transparent rounded-full'></div>
+        <div
+          className='w-2 h-80 bg-gradient-to-b from-white to-transparent rounded-full'
+          data-aos='fade-up'
+          data-aos-duration='1000'
+        ></div>
 
         {experience.map((exper, index) => (
-          <div key={exper.id} className='grid grid-cols-12 gap-4 w-full relative'>
+          <div key={exper.id} className='flex flex-col md:grid md:grid-cols-12 gap-4 w-full relative'>
             <div className='experience_circle'>
               <div className='experience_circle_inner'></div>
             </div>
@@ -50,10 +56,12 @@ const Experience = () => {
               width='70'
               height='70'
               decoding='async'
-              className='col-span-1 rounded-xl'
+              className='md:col-span-1 rounded-xl'
+              data-aos='fade-left'
+              data-aos-duration='1000'
             />
 
-            <div className='col-span-11 flex flex-col gap-2 relative'>
+            <div className='md:col-span-11 flex flex-col gap-2 relative' data-aos='fade-left' data-aos-duration='1000'>
               <h3 className='text-3xl font-bold capitalize'>{exper.jobRole}</h3>
               <h5 className='text-lg font-semibold'>{exper.company}</h5>
               <p className='text-sm text-[var(--text-body)]'>{exper.history}</p>

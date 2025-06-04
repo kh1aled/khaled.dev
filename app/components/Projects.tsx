@@ -45,9 +45,11 @@ const Projects = () => {
 
   return (
     <section id='projects' className='flex flex-col relative max-container !pt-4'>
-      <h3 className='subhead-text'>My Projects</h3>
+      <h3 className='subhead-text' data-aos='fade-up' data-aos-duration='1000'>
+        My Projects
+      </h3>
 
-      <div className='text-slate-500 mt-5 flex flex-col gap-5'>
+      <div className='text-slate-500 mt-5 flex flex-col gap-5' data-aos='fade-up' data-aos-duration='1000'>
         <p>
           I've collaborated with diverse companies and teams, continuously sharpening my skills and gaining hands-on
           experience across various projects. Working alongside talented professionals has allowed me to grow both
@@ -62,6 +64,8 @@ const Projects = () => {
             href={project.link}
             target='_blank'
             rel='noopener noreferrer'
+            data-aos='fade-up'
+            data-aos-duration='1000'
             className={`w-full rounded-[20px] cursor-pointer backdrop-blur bg-gradient-to-r from-[#d9d9d91f] to-[#7373731f] grid grid-cols-1 items-start lg:grid-cols-12 xl:flex xl:items-stretch gap-5 xl:gap-10 p-6 duration-700 opacity-100 translate-y-0 hover:scale-[1.02] transition-transform`}
           >
             <Image

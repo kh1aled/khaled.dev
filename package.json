@@ -1,5 +1,5 @@
 {
-  "name": "khaled-portfolio",
+  "name": "khaled Hamdy",
   "description": "Khaled's portfolio website, built with Next.js and Three.js.",
   "version": "2.0.0",
   "authors": [
@@ -23,6 +23,7 @@
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@react-three/drei": "^9.92.7",
     "@react-three/fiber": "^8.18.0",
+    "aos": "^2.3.4",
     "glsl-random": "^0.0.5",
     "next": "^14.0.4",
     "react": "^18.2.0",

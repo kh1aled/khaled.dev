@@ -1,16 +1,14 @@
-import React from 'react'
-import Image from 'next/image'
-import github from '../assets/icons/github.svg'
-import linkedin from '../assets/icons/linkedin.svg'
-import contact from '../assets/icons/whatsapp.svg'
-import facebook from '../assets/icons/facebook.svg'
+'use client'
 
 const Fotter = () => {
   return (
     <section>
       <div className='bg-[var(--secondary-color)] text-white py-2 text-center flex flex-col sm:flex-row items-center justify-between px-12 '>
-        <p>© 2023 Your Company. All rights reserved.</p>
-        <div className='flex justify-center space-x-4 mt-2'>
+        <p>
+          Made with ❤️ by Khaled Hamdy
+          © 2025 Developer. All rights reserved.
+        </p>
+        <div className='flex justify-center space-x-4 mt-2' >
           <a href='http://wa.me/+201159107545' target='_blank' className='text-white text-xl'>
             <i className='fa-brands fa-whatsapp text-white'></i>
           </a>

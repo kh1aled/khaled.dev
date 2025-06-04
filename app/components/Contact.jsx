@@ -60,7 +60,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative flex flex-col lg:flex-row max-container">
-      <div className="flex-1 min-w-[50%] flex flex-col">
+      <div className="flex-1 min-w-[50%] flex flex-col" data-aos='fade-right' data-aos-duration='1000'>
         {alert.show && <Alert {...alert} />}
 
         <h1 className="head-text">Get In Touch</h1>
@@ -113,7 +113,7 @@ const Contact = () => {
         </form>
       </div>
 
-      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
+      <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]" data-aos='fade-left' data-aos-duration='1000'>
         <Canvas
           camera={{
             position: [0, 0, 5],

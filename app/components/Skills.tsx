@@ -64,37 +64,41 @@ const Skills = () => {
       <h3 className='subhead-text'>My Stack</h3>
 
       <div className='text-slate-500  mt-12'>
-
-
         {/** Frontend */}
-        <div className='w-full grid sm:grid-cols-12 mt-12'>
-          <div className='text-start sm:col-span-5'>
+        <div className='w-full grid sm:grid-cols-12 mt-12 gap-5'>
+          <div className='text-start sm:col-span-5' data-aos='fade-right' data-aos-duration='1000'>
             <h3 className='text-[var(--text-body)] text-4xl uppercase'>Frontend</h3>
           </div>
           <div className='sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap'>
             {frontend.map((skill) => (
-              <div key={skill?.id} className='flex gap-4 items-center leading-none'>
+              <div
+                key={skill?.id}
+                className='flex gap-4 items-center leading-none'
+                data-aos='fade-up'
+                data-aos-duration='1000'
+              >
                 <div>
                   <Image width={40} height={40} src={skill?.icon} alt={skill?.name} className='object-contain' />
                 </div>
                 <span className='text-2xl capitalize text-white'>{skill.name}</span>
-                {/* <div className='btn-back rounded-xl'></div>
-                <div className='btn-front rounded-xl flex justify-center items-center'>
-                  <Image src={skill?.icon} alt={skill?.name} className='w-1/2 h-1/2 object-contain' />
-                </div> */}
               </div>
             ))}
           </div>
         </div>
 
         {/** Backend */}
-        <div className='w-full grid sm:grid-cols-12 mt-16'>
-          <div className='text-start sm:col-span-5'>
+        <div className='w-full grid sm:grid-cols-12 mt-16 gap-5'>
+          <div className='text-start sm:col-span-5' data-aos='fade-right' data-aos-duration='1000'>
             <h3 className='text-[var(--text-body)] text-4xl uppercase'>backend</h3>
           </div>
           <div className='sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap'>
             {backend.map((skill) => (
-              <div key={skill?.id} className='flex gap-4 items-center leading-none'>
+              <div
+                key={skill?.id}
+                className='flex gap-4 items-center leading-none'
+                data-aos='fade-up'
+                data-aos-duration='1000'
+              >
                 <div>
                   <Image width={40} height={40} src={skill?.icon} alt={skill?.name} className='object-contain' />
                 </div>
@@ -105,13 +109,18 @@ const Skills = () => {
         </div>
 
         {/** Database */}
-        <div className='w-full grid sm:grid-cols-12 mt-16'>
-          <div className='text-start sm:col-span-5'>
+        <div className='w-full grid sm:grid-cols-12 mt-16 gap-5'>
+          <div className='text-start sm:col-span-5' data-aos='fade-right' data-aos-duration='1000'>
             <h3 className='text-[var(--text-body)] text-4xl uppercase'>database</h3>
           </div>
           <div className='sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap'>
             {database.map((skill) => (
-              <div key={skill?.id} className='flex gap-4 items-center leading-none'>
+              <div
+                key={skill?.id}
+                className='flex gap-4 items-center leading-none'
+                data-aos='fade-up'
+                data-aos-duration='1000'
+              >
                 <div>
                   <Image width={40} height={40} src={skill?.icon} alt={skill?.name} className='object-contain' />
                 </div>
@@ -127,12 +136,3 @@ const Skills = () => {
 
 export default Skills
 
-
-{/* <div class="slide-up flex gap-3.5 items-center leading-none" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-  <div>
-  <img alt="GSAP" loading="lazy" width="40" height="40" decoding="async" data-nimg="1" class="max-h-10" style="color:transparent" srcset="/_next/image?url=%2Flogo%2Fgsap.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Flogo%2Fgsap.png&amp;w=96&amp;q=75 2x" src="/_next/image?url=%2Flogo%2Fgsap.png&amp;w=96&amp;q=75">
-  </div>
-  <span class="text-2xl capitalize">GSAP</span>
-</div> */}
-
-//                className='block-container w-20 h-20 rounded-xl flex items-center justify-center text-white font-semibold flex-col'

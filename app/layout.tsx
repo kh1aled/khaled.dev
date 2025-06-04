@@ -17,7 +17,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Dev Khaled",
+  title: "Dev Khaled Hamdy",
   description: "i'm khaled hamdy full stack developer",
   icons: "/favicon.png",
 };
@@ -32,12 +32,12 @@ export default function RootLayout({
 
 
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={`${workSans.variable} ${poppins.variable} antialiased`}>
         <Navbar />
         {children}
         {/* <Fotter/> */}
       </body>
     </html>
-  );
+  )
 }

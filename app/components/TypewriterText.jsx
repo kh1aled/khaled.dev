@@ -32,7 +32,7 @@ export default function TypewriterText({ text, speed = 100, delay = 2000 }) {
     }, [index, isDeleting, text, speed, delay])
 
     return (
-        <span className="blue-gradient_text">
+        <span className="blue-gradient_text truncate">
             {displayedText}
             <span className="animate-pulse text-[var(--text-body)]">|</span>
         </span>

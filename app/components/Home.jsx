@@ -10,11 +10,11 @@ const Home = () => {
                 <h1 className='home__title'>Welcome to My Portfolio 👋</h1>
 
                 <p className="home__description" >
-                    <span className="text-[var(--text-body)]">
+                    <span className="name text-[var(--text-body)]">
                         I'm <TypewriterText text="Khaled Hamdy" />
                     </span>
                     <br />
-                    <span className="text-white">a Software Engineer</span>
+                    <span className="text-white desc">a Software Engineer</span>
                 </p>
 
 

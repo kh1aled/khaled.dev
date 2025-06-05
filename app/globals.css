@@ -61,7 +61,8 @@ body {
   color: white;
   transition-property: opacity , background-color , filter , transform;
   transition-timing-function: ease-in-out;
-  height: 500vh;
+  overflow-x: hidden;
+
 }
 
 .page-transition{
@@ -184,7 +185,7 @@ body:has(.card[data-color="green"]:hover) {
     @apply w-full text-lg sm:text-xl text-[var(--text-body)] text-center sm:text-start
   }
   .home__description{
-    @apply text-4xl sm:text-4xl font-bold leading-[3rem] sm:leading-[3.5rem] md:text-5xl md:leading-[4.5rem]  lg:text-6xl lg:leading-[5.5rem] ;
+    @apply overflow-hidden text-4xl sm:text-4xl font-bold leading-[3rem] sm:leading-[3.5rem] md:text-5xl md:leading-[4.5rem]  lg:text-6xl lg:leading-[5.5rem] ;
   }
   .home__bg_image{
     @apply w-[20rem] lg:w-[25rem] aspect-square cursor-pointer
@@ -504,4 +505,14 @@ body:has(.card[data-color="green"]:hover) {
   visibility: visible !important;
   opacity: 1 !important;
   transform: none !important;
+}
+
+
+@media screen and (max-width : 450px) {
+  .home .home__description .name{
+    font-size: 30px;
+  }
+  .home .home__description .desc{
+    font-size: 31px;
+  }
 }

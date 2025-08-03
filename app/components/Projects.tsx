@@ -15,8 +15,8 @@ const Projects = () => {
       id: 1,
       name: 'Yc Directory',
       image : yc,
-      icon: ycIcon, // يفضل مسار الصورة كـ string أو استيرادها صحيحاً
-      link: 'https://yc-directory.vercel.app/',
+      icon: ycIcon,
+      link: 'https://yc-direcotry.vercel.app/',
       description:
         'This is a project that allows you to create your own directory of YC startups. You can add, edit, and delete startups, as well as search for them by name or category.',
       technologies: ['React', 'Next.js', 'TailwindCSS', 'JavaScript' , "Sanity"],

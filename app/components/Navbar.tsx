@@ -10,8 +10,8 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll'
 const NAV_LINKS = [
   { id: 1, href: 'home', label: 'Home' },
   { id: 2, href: 'about', label: 'About' },
-  { id: 3, href: 'contact', label: 'Contact' },
   { id: 4, href: 'projects', label: 'Projects' },
+  { id: 3, href: 'contact', label: 'Contact' },
 ]
 
 const Navbar = () => {
@@ -24,6 +24,12 @@ const Navbar = () => {
     collapse.current.classList.toggle('navbar-collapse-show')
     nav_toggler.current.classList.toggle('open')
     setIsOpen((prev) => !prev);
+  }
+
+  const handleClick = ()=>{
+    const audio = new Audio('/audios/swoosh.mp3')
+    audio.play();
+    if(isOpen) handleshow();
   }
 
   return (
@@ -62,7 +68,7 @@ const Navbar = () => {
           </div>
           <ul className='navbar-nav mt-2 mt-lg-0 flex flex-col lg:flex-row gap-4'>
             {NAV_LINKS.map(({ href, label, id }) => (
-              <li className='nav-item duration-150 hover:-translate-y-1 ease-out' key={id}>
+              <li className='nav-item' key={id}>
                 <ScrollLink
                   to={href}
                   smooth={true}
@@ -70,7 +76,7 @@ const Navbar = () => {
                   className={`nav-link cursor-pointer ${isOpen ? 'text-[2rem] hover:text-[var(--color-blue)] transition-colors duration-150' : 'text-md'} ${
                     route === `/${href}` ? 'text-white font-bold drop-shadow' : `text-white `
                   }`}
-                  onClick={isOpen && handleshow}
+                  onClick={handleClick}
                 >
                   {label}
                 </ScrollLink>

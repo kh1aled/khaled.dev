@@ -1,7 +1,6 @@
 import React from 'react'
 import Skills from './Skills'
 import Experience from './Experience'
-import CTA from './CTA'
 import Education from './Education'
 import Link from 'next/link'
 

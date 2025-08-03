@@ -538,3 +538,22 @@ body:has(.card[data-color="green"]:hover) {
     font-size: 31px;
   }
 }
+
+
+@keyframes logo_animation {
+  0%{
+    transform: translateX(0) rotateZ(0);
+  }
+  25%{
+    transform: translateX(-20) rotateZ(-20);
+  }
+  50%{
+    transform: translateX(-40) rotateZ(0);
+  }
+  75%{
+    transform: translateX(-50) rotateZ(-20);
+  }
+  100%{
+    transform: translateX(-60) rotateZ(0);
+  }
+}

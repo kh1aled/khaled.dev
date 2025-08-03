@@ -47,7 +47,12 @@ const Home = () => {
             overwrite: "auto",
         });
     };
-    
+
+
+    const handleClick = () => {
+        const audio = new Audio('/audios/swoosh.mp3')
+        audio.play();
+      }
 
     return (
 
@@ -64,7 +69,7 @@ const Home = () => {
                 </p>
 
 
-                <a href='#about' className='home__link btn'>About Me</a>
+                <a href='#about' className='home__link btn' onClick={handleClick}>About Me</a>
 
 
             </div>

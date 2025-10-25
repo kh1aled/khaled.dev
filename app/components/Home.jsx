@@ -31,7 +31,7 @@ const Home = () => {
             duration: 0.3,
             ease: "power3.out",
             overwrite: "auto",
-            borderRadius : 300
+            borderRadius: 300
         });
     };
 
@@ -52,7 +52,7 @@ const Home = () => {
     const handleClick = () => {
         const audio = new Audio('/audios/swoosh.mp3')
         audio.play();
-      }
+    }
 
     return (
 
@@ -60,13 +60,18 @@ const Home = () => {
             <div className='home__container flex justify-center items-start flex-col gap-10' data-aos="fade-right" >
                 <h1 className='home__title'>Welcome to My Portfolio 👋</h1>
 
-                <p className="home__description" >
+                <p className="home__description">
                     <span className="name text-[var(--text-body)]">
                         I'm <TypewriterText text="Khaled Hamdy" />
                     </span>
                     <br />
-                    <span className="text-white desc">a Software Engineer</span>
+                    <span className="text-white desc">Full Stack Web Developer</span>
+                    <br />
+                    <p className="text-description">
+                        I build modern websites and web solutions that help businesses and coaches grow their online presence and earn more trust from their audience.
+                    </p>
                 </p>
+
 
 
                 <a href='#about' className='home__link btn' onClick={handleClick}>About Me</a>
@@ -75,7 +80,7 @@ const Home = () => {
             </div>
             <div className='home__background' data-aos="fade-left">
                 <Image
-                ref={imgRef}
+                    ref={imgRef}
                     onMouseMove={handleMouseMove}
                     onMouseLeave={handleMouseLeave}
                     src={profile} alt='dev khaled hamdy' className='home__bg_image' />

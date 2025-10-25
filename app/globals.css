@@ -220,8 +220,11 @@ body:has(.card[data-color="green"]:hover) {
   }
   .experience_circle_inner{
     @apply w-full h-full bg-white rounded-full
-
   }
+.text-description {
+  @apply mt-5 text-[3vw] md:text-[1.1vw] lg:text-[1vw] text-[var(--text-body)] max-w-[600px] leading-relaxed;
+}
+
 
   /* absolute -translate-x-[29px] sm:-translate-x-8 left-0 */
 
